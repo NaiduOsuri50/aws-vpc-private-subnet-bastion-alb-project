@@ -1,0 +1,59 @@
+Troubleshooting
+Issue: Permission denied publickey
+Solution:
+Used correct username ubuntu
+Verified key pair
+Used bastion host to connect private EC2 instances
+
+Issue: Only one server response showing from Load Balancer
+Root cause:
+One target was unhealthy in Target Group
+Solution:
+Started Python HTTP server on port 8000
+Updated Security Group inbound rule
+Verified Target Group health status
+
+Cleanup
+To avoid AWS Free Tier or unexpected charges:
+Stop EC2 instances when not in use.
+Delete Application Load Balancer.
+Delete NAT Gateway if created.
+Release unused Elastic IPs.
+Delete unused EBS volumes and snapshots.
+
+Key Learnings
+Created a secure VPC architecture with public and private subnets.
+Used bastion host to access private EC2 instances.
+Configured Application Load Balancer with Target Group.
+Troubleshot Target Group health check failures.
+Understood Security Group rules for ALB-to-EC2 communication.
+Learned AWS cleanup best practices to avoid unnecessary charges.
+
+Reference
+AWS Documentation: VPC with servers in private subnets and NAT Gateway
+https://docs.aws.amazon.com/vpc/latest/userguide/vpc-example-private-subnets-nat.html
+
+---
+
+# 4. What screenshots to upload
+
+Upload these screenshots to GitHub:
+
+1. **VPC architecture or VPC resource map**
+2. **EC2 instances list**
+3. **Bastion host public IP**
+4. **Private EC2 instances without public IP**
+5. **PuTTY login to bastion**
+6. **SSH from bastion to private EC2**
+7. **Target Group showing both targets healthy**
+8. **Load Balancer DNS output**
+9. **Security Group inbound rules**
+10. **Route tables if possible**
+
+Before uploading screenshots, blur or hide:
+
+```text
+Account ID
+Public IP if you do not want to expose it
+Key pair name if sensitive
+IAM/user details
