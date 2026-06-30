@@ -1,0 +1,37 @@
+Internet User
+     |
+     v
+Application Load Balancer
+     |
+     v
+Private EC2 Server 1     Private EC2 Server 2
+10.0.142.111             10.0.150.159
+     ^
+     |
+Bastion Host
+Public EC2 Instance
+     ^
+     |
+Your Laptop / PuTTY
+
+
+
+                                                 More complete version:
+
+                    Internet
+                       |
+                       v
+              Internet Gateway
+                       |
+          -------------------------
+          |                       |
+   Public Subnet AZ-1      Public Subnet AZ-2
+          |                       |
+   Bastion Host             Load Balancer Node
+          |
+          v
+   -----------------------------------------
+   |                                       |
+Private Subnet AZ-1                 Private Subnet AZ-2
+EC2 Server 1                         EC2 Server 2
+10.0.142.111                         10.0.150.159
