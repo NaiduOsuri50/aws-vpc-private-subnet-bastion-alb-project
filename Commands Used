@@ -1,0 +1,22 @@
+Connect to private server from bastion host
+ssh ubuntu@10.0.142.111Show 
+ssh ubuntu@10.0.150.159Show 
+
+Create HTML file
+vi index.htmlShow more lines
+
+Start Python HTTP server
+python3 -m http.server 8000S
+
+Recommended background command
+nohup python3 -m http.server 8000 --bind 0.0.0.0 > server.log 2>&1 &
+
+Check running service
+ss -ltnp | grep 8000Show more lines
+
+Test from bastion host
+curl http://10.0.142.111:8000
+curl http://10.0.150.159:8000
+
+Load Balancer URL
+http://aws-prod-ex-2056307876.eu-north-1.elb.amazonaws.com/
